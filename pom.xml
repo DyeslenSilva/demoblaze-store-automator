@@ -11,6 +11,51 @@
 		    <artifactId>selenium-java</artifactId>
 		    <version>4.0.0-rc-2</version>
 		</dependency>
-  	
+  		
+		 <dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-api</artifactId>
+		    <version>5.8.1</version>
+		    <scope>test</scope>
+		</dependency>
+  		
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-junit</artifactId>
+		    <version>7.0.0</version>
+		    <scope>test</scope>
+		</dependency>
+		  		
+		
+		<dependency>
+		    <groupId>com.github.mkolisnyk</groupId>
+		    <artifactId>cucumber-runner</artifactId>
+		    <version>1.0.10</version>
+		</dependency>
+
+
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>gherkin</artifactId>
+		    <version>22.0.0</version>
+		</dependency>
+				
+
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-java</artifactId>
+		    <version>7.0.0-RC1</version>
+		</dependency>
+		
+		
+	
+		<dependency> 
+		   <groupId>info.cukes</groupId> 
+		   <artifactId>cucumber-junit</artifactId> 
+		   <version>1.0.2</version> 
+		   <scope>test</scope> 
+		</dependency>
+		
+		
   </dependencies>
 </project>
