@@ -33,7 +33,7 @@ public class CompraPageObject {
 		webDriver.get("https://www.demoblaze.com/cart.html#");
 	}
 	
-	private void placeOrder() {
+	public void placeOrder() {
 		WebElement placeOrder = webDriver.findElement(By.id(""));
 		placeOrder.click();
 		
@@ -51,15 +51,24 @@ public class CompraPageObject {
 		month.sendKeys("12");
 		year.sendKeys("2022");
 		
+		
+	}
+	
+	public void clickBotaoPurchase() {
 		WebElement purchase = webDriver.findElement(By.id(""));
 		purchase.click();
 	}
 	
+	
 	public void escolheProduto() {
 		WebElement produto = webDriver.findElement(By.id(""));
-		WebElement submit = webDriver.findElement(By.id(""));
-		
 		produto.sendKeys("");
-		submit.click();
 	}
+	
+	public void submit() {
+		WebElement submit = webDriver.findElement(By.id(""));
+		submit.click();
+
+	}
+	
 }

@@ -10,6 +10,8 @@ import io.cucumber.java.en.When;
 public class RealizarCompra extends CompraPageObject{
 
 	private LoginPageObject loginPageObject;
+	//private CompraPageObject compraPageObject;
+	private WebDriver webDriver;
 	
 	public RealizarCompra(WebDriver driver) {
 		super(driver);
@@ -23,32 +25,32 @@ public class RealizarCompra extends CompraPageObject{
 	
 	@Then("escolhe produto que deseja comprar")
 	public void escolhe_produto_que_deseja_comprar() {
-		
+		escolheProduto();
 	}
+	
 	@Then("adiciona o produto no carrinho")
 	public void adiciona_o_produto_no_carrinho() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   addCarrinho();
 	}
+	
 	@Then("vai para a pagina do carrinho de compra")
 	public void vai_para_a_pagina_do_carrinho_de_compra() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    webDriver.get("");
 	}
+	
 	@Then("clica no botao <place order>")
 	public void clica_no_botao_place_order() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		clickBotaoPurchase();
 	}
+	
 	@Then("preencho o formulario")
 	public void preencho_o_formulario() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		placeOrder();
 	}
+	
 	@Then("envia o formulario")
 	public void envia_o_formulario() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		submit();
 	}
 
 
