@@ -14,8 +14,8 @@ public class LoginPageObject {
 	
 	@org.junit.Test
 	public void realizaLogin(String usuario, String senha) {
-		WebElement login = driver.findElement(By.id(""));
-		WebElement senhaPass = driver.findElement(By.id(""));
+		WebElement login = driver.findElement(By.id("loginusername"));
+		WebElement senhaPass = driver.findElement(By.id("loginpassword"));
 		
 		login.sendKeys(usuario);
 		senhaPass.sendKeys(senha);
@@ -25,7 +25,7 @@ public class LoginPageObject {
 	
 
 	public void clickBotao() {
-		WebElement botaoLogin = driver.findElement(By.id(""));
+		WebElement botaoLogin = driver.findElement(By.className("btn btn-primary"));
 		botaoLogin.click();
 	}
 }

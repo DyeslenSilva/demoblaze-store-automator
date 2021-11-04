@@ -20,7 +20,8 @@ public class RealizarLogin extends LoginPageObject{
 	
 	@When("acessa a pagina de login")
 	public void acessa_a_pagina_de_login() {
-	    WebElement paginaLogin = driver.findElement(By.id(""));
+	    WebElement paginaLogin = driver.findElement(By.id("loginusername"));
+	    paginaLogin.click();
 	}
 	
 	@When("preencho o <login> e <senha>")

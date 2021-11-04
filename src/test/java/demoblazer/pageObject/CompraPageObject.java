@@ -1,4 +1,4 @@
-package demoblazer.pageObject;
+	package demoblazer.pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,28 +21,23 @@ public class CompraPageObject {
 		compraButton.click();	
 	
 		WebElement cart = webDriver.findElement(By.id(""));
-		cart.click();
-		
-		paginaCart();
-		placeOrder();
-		escolheProduto();
-		
+		cart.click();		
 	}
 	
-	private static void paginaCart() {
+	public static void paginaCart() {
 		webDriver.get("https://www.demoblaze.com/cart.html#");
 	}
 	
 	public void placeOrder() {
-		WebElement placeOrder = webDriver.findElement(By.id(""));
+		WebElement placeOrder = webDriver.findElement(By.className("btn btn-success"));
 		placeOrder.click();
 		
-		WebElement name = webDriver.findElement(By.id(""));
-		WebElement country = webDriver.findElement(By.id(""));
-		WebElement city = webDriver.findElement(By.id(""));
-		WebElement creditCard = webDriver.findElement(By.id(""));
-		WebElement month = webDriver.findElement(By.id(""));
-		WebElement year = webDriver.findElement(By.id(""));
+		WebElement name = webDriver.findElement(By.id("name"));
+		WebElement country = webDriver.findElement(By.id("country"));
+		WebElement city = webDriver.findElement(By.id("city"));
+		WebElement creditCard = webDriver.findElement(By.id("card"));
+		WebElement month = webDriver.findElement(By.id("month"));
+		WebElement year = webDriver.findElement(By.id("year"));
 		
 		name.sendKeys("Dyeslen");
 		country.sendKeys("Brasil");
@@ -51,6 +46,7 @@ public class CompraPageObject {
 		month.sendKeys("12");
 		year.sendKeys("2022");
 		
+		clickBotaoPurchase();
 		
 	}
 	

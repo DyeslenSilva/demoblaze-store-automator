@@ -14,8 +14,8 @@ public class UsuarioPageObject {
 	
 	@org.junit.Test
 	public void cadastroDeUsuarios(String usuario, String senha) {
-		WebElement loginElement = webDriver.findElement(By.name(""));
-		WebElement senhaElement = webDriver.findElement(By.name(""));
+		WebElement loginElement = webDriver.findElement(By.id("sign-username"));
+		WebElement senhaElement = webDriver.findElement(By.id("sign-password"));
 		
 		loginElement.sendKeys(usuario);
 		senhaElement.sendKeys(senha);
@@ -23,7 +23,7 @@ public class UsuarioPageObject {
 	
 	
 	public void clickBotao() {
-		WebElement botaoSalvar = webDriver.findElement(By.id(""));
+		WebElement botaoSalvar = webDriver.findElement(By.className("btn btn-primary"));
 		botaoSalvar.click();
 	}
 }
