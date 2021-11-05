@@ -31,7 +31,9 @@ public class CompraPageObject {
 	public void placeOrder() {
 		WebElement placeOrder = webDriver.findElement(By.className("btn btn-success"));
 		placeOrder.click();
-		
+	}
+	
+	public void preencheForm() {	
 		WebElement name = webDriver.findElement(By.id("name"));
 		WebElement country = webDriver.findElement(By.id("country"));
 		WebElement city = webDriver.findElement(By.id("city"));

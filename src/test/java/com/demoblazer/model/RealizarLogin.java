@@ -1,8 +1,12 @@
 package com.demoblazer.model;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.demoblazer.driver.DriverDemoBlazer;
 
 import demoblazer.pageObject.LoginPageObject;
 import io.cucumber.java.en.Then;
@@ -10,13 +14,15 @@ import io.cucumber.java.en.When;
 
 public class RealizarLogin extends LoginPageObject{
 
+	
 	private WebDriver driver;
+	//private DriverDemoBlazer driverDemoBlazer;
 	
 	
 	public RealizarLogin(WebDriver webDriver) {
-		super(webDriver);
+		this.driver = new ChromeDriver();
 	}
-
+	
 	
 	@When("acessa a pagina de login")
 	public void acessa_a_pagina_de_login() {
@@ -24,7 +30,7 @@ public class RealizarLogin extends LoginPageObject{
 	    paginaLogin.click();
 	}
 	
-	@When("preencho o <login> e <senha>")
+	@When("preencho o login e senha")
 	public void preencho_o_login_e_senha(String login, String senha) {
 		realizaLogin(login, senha);
 	}
@@ -36,7 +42,7 @@ public class RealizarLogin extends LoginPageObject{
 	
 	@Then("abre pagina do cliente")
 	public void abre_pagina_do_cliente() {
-		
+		driver.get("https://www.demoblaze.com/index.html");
 	}
 
 		
