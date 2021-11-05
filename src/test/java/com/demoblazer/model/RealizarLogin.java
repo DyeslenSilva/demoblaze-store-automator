@@ -1,29 +1,15 @@
 package com.demoblazer.model;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
 
 import com.demoblazer.driver.DriverDemoBlazer;
 
-import demoblazer.pageObject.LoginPageObject;
 import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class RealizarLogin{
-
-	
-	private WebDriver driver;
-//	private DriverDemoBlazer driverDemoBlazer;
-	
-	
-	public RealizarLogin() {
-		driver = DriverDemoBlazer.getDriver();
-	}
 	
 	@Before
 	public void before() {
@@ -32,30 +18,35 @@ public class RealizarLogin{
 	}
 	
 	
-	@When("acessa a pagina de login")
-	public void acessa_a_pagina_de_login() {
-		WebElement linkLogin = driver.findElement(By.id("login2"));
-		linkLogin.click();
-		
+	@When("acessa a pagina")
+	public void acessa_a_pagina() {
+		DriverDemoBlazer.getDriver().navigate().to("https://www.demoblaze.com/index.html");
 	}
 	
-	@When("preencho o login e senha")
-	public void preencho_o_login_e_senha() {
-		WebElement txLogin = driver.findElement(By.id("loginusername"));
-		WebElement txSenha = driver.findElement(By.id("loginpassword"));
+	@When("acessa o menu login")
+	public void acessa_o_menu_login() {
+		WebElement linkLogin = DriverDemoBlazer.getDriver().findElement(By.id("login2"));
+		linkLogin.click();
+	}
+	
+	@When("preencho com <login> e <senha>")
+	public void preencho_com_login_e_senha() {
+		WebElement txLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id=\"loginusername\"]"));
+		WebElement txSenha = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id=\"loginpassword\"]"));
 		
 		txLogin.sendKeys("dyeslen");
 		txSenha.sendKeys("dyeslen");
 	}
-	@When("clico no botao login")
+	
+	@When("clico no botao <log in>")
 	public void clico_no_botao_login() {
-		WebElement btLogin = driver.findElement(By.id("btn btn-primary"));
+		WebElement btLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//button[@class=\"btn btn-primary\"]"));
 		btLogin.click();
 	}
+	
 	@Then("abre pagina do cliente")
 	public void abre_pagina_do_cliente() {
-	   driver.get("https://www.demoblaze.com/index.html");
+		DriverDemoBlazer.getDriver().navigate().to("https://www.demoblaze.com/index.html");
 	}
-
 		
 }

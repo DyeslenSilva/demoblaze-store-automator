@@ -3,11 +3,7 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="com.demoblazer.model.RealizarLogin">
-        <methods>
-          <include name="before"/>
-        </methods>
-      </class> <!-- com.demoblazer.model.RealizarLogin -->
+      <class name="com.demoblazer.model.RealizarLogin"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Failed suite [Default suite] -->

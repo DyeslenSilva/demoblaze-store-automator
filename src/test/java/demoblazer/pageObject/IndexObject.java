@@ -14,6 +14,6 @@ public class IndexObject {
 	}
 	
 	public void abrePagina() {
-		webDriver.get(pagina);
+		webDriver.navigate().to(pagina);
 	}
 }
