@@ -3,7 +3,6 @@ package com.demoblazer.model;
 import org.openqa.selenium.WebDriver;
 
 import demoblazer.pageObject.CompraPageObject;
-import demoblazer.pageObject.LoginPageObject;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 

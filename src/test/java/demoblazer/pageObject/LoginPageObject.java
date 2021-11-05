@@ -1,11 +1,12 @@
 package demoblazer.pageObject;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import io.cucumber.java.BeforeAll;
+import io.cucumber.java.Before;
 
 public class LoginPageObject {
 	
@@ -20,7 +21,7 @@ public class LoginPageObject {
 	@FindBy(className = "btn btn-primary")
 	private WebElement btnLogin;
 	
-	@BeforeAll
+	@Before
 	public void realizaLogin(String usuario, String senha) {	
 		login.sendKeys(usuario);
 		senhaPass.sendKeys(senha);
@@ -29,7 +30,6 @@ public class LoginPageObject {
 		driver.get("https://www.demoblaze.com/index.html");	
 	}
 	
-
 	public void clickBotao() {
 		WebElement botaoLogin = driver.findElement(By.className("btn btn-primary"));
 		botaoLogin.click();

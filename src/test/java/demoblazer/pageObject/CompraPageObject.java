@@ -1,5 +1,6 @@
 	package demoblazer.pageObject;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ public class CompraPageObject {
 		webDriver = driver;
 	}
 	
+	@Test
 	public void addCarrinho() {
 		WebElement produto = webDriver.findElement(By.id(""));
 		produto.click();
@@ -24,6 +26,7 @@ public class CompraPageObject {
 		cart.click();		
 	}
 	
+	@Test
 	public static void paginaCart() {
 		webDriver.get("https://www.demoblaze.com/cart.html#");
 	}
@@ -52,6 +55,7 @@ public class CompraPageObject {
 		
 	}
 	
+	@Test
 	public void clickBotaoPurchase() {
 		WebElement purchase = webDriver.findElement(By.id(""));
 		purchase.click();

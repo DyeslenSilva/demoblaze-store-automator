@@ -13,7 +13,6 @@ public class UsuarioPageObject {
 		driver = this.webDriver;
 	}
 	
-	@Test
 	public void cadastroDeUsuarios(String usuario, String senha) {
 		WebElement loginElement = webDriver.findElement(By.id("sign-username"));
 		WebElement senhaElement = webDriver.findElement(By.id("sign-password"));
@@ -22,7 +21,6 @@ public class UsuarioPageObject {
 		senhaElement.sendKeys("123");
 	}
 	
-	@Test
 	public void clickBotao() {
 		WebElement botaoSalvar = webDriver.findElement(By.className("btn btn-primary"));
 		botaoSalvar.click();

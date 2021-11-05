@@ -13,7 +13,6 @@ public class IndexObject {
 		this.webDriver = driver;
 	}
 	
-	@BeforeAll
 	public void abrePagina() {
 		webDriver.get(pagina);
 	}

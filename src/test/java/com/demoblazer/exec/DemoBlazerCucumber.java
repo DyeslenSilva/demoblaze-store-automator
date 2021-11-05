@@ -6,8 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features" , 
-			tags = "@login", glue = "src/test/java/CucumberTestDefinition" )
+@CucumberOptions(features = "classpath:features/login-blazer.feature" , 
+			tags = "@login", glue = "com.demoblazer.model")
 public class DemoBlazerCucumber{
 
 }
