@@ -20,27 +20,28 @@ public class RealizarLogin{
 	
 	@When("acessa a pagina")
 	public void acessa_a_pagina() {
-		DriverDemoBlazer.getDriver().navigate().to("https://www.demoblaze.com/index.html");
+		DriverDemoBlazer.getDriver().navigate().to("https://demoblaze.com/");
 	}
 	
 	@When("acessa o menu login")
 	public void acessa_o_menu_login() {
-		WebElement linkLogin = DriverDemoBlazer.getDriver().findElement(By.id("login2"));
+		WebElement linkLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//a[@id='login2']"));
 		linkLogin.click();
 	}
 	
 	@When("preencho com <login> e <senha>")
 	public void preencho_com_login_e_senha() {
-		WebElement txLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id=\"loginusername\"]"));
-		WebElement txSenha = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id=\"loginpassword\"]"));
+		WebElement txLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='loginusername']"));
+		WebElement txSenha = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='loginpassword']"));
 		
 		txLogin.sendKeys("dyeslen");
 		txSenha.sendKeys("dyeslen");
+		//clico_no_botao_login();
 	}
 	
 	@When("clico no botao <log in>")
 	public void clico_no_botao_login() {
-		WebElement btLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//button[@class=\"btn btn-primary\"]"));
+		WebElement btLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//button[@onclick='logIn()']"));
 		btLogin.click();
 	}
 	

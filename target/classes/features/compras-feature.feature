@@ -1,9 +1,6 @@
 @compras	
 Feature: compras
 
-Background: 
-	Given: um usuario deve estar logado no sistema
-	
 	Scenario: realizar compra
 		When escolhe produto que deseja comprar
 		Then  adiciona o produto no carrinho
