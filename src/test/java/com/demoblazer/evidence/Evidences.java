@@ -19,6 +19,21 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class Evidences {
 	
+	private static String usuarioLogado = System.getProperty("user.name");
+	
+	private	static PdfPCell lblSistema = new PdfPCell(new Paragraph("Sistema"));
+	private	static PdfPCell txtSistema = new PdfPCell(new Paragraph("Loja Demo Blaze"));
+	private	static PdfPCell lblVersao = new PdfPCell(new Paragraph("Versao"));
+	private	static PdfPCell txtVersao = new PdfPCell(new Paragraph("Versao"));
+	private	static PdfPCell lblCT = new PdfPCell(new Paragraph());
+	private	static PdfPCell txtCT = new PdfPCell(new Paragraph());
+	private	static PdfPCell lblExecutor = new PdfPCell(new Paragraph("Executor"));
+	private	static PdfPCell txtExecutor = new PdfPCell(new Paragraph(usuarioLogado));
+	private	static PdfPCell lblData = new PdfPCell(new Paragraph());
+	private	static PdfPCell txtData = new PdfPCell(new Paragraph());
+	private static	PdfPTable tableheader = new PdfPTable(new float[] { 0.15f, 0.35f,0.13f,0.37f });
+
+	
 	public static Document geraPDFEvidence(File dir) throws FileNotFoundException, DocumentException {
 		Document document = new Document(PageSize.A4);
 		OutputStream outputStream = new FileOutputStream(dir +".pdf");
@@ -29,14 +44,11 @@ public class Evidences {
 	
 	
 	public static void addCabecalhoPDF() throws DocumentException {
-		Font bold = new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
-		String usuarioLogado = System.getProperty("user.name");
 		Document document = new Document(PageSize.A4);
 		
 		Font alteraFont = new Font(FontFamily.COURIER,12,Font.BOLD);
 		alteraFont.setColor(BaseColor.BLUE);
 	
-		PdfPTable tableheader = new PdfPTable(new float[] { 0.15f, 0.35f,0.13f,0.37f });
 		
 		PdfPCell header = new PdfPCell(new Paragraph("Evidencia de Teste",alteraFont));
 		header.setUseBorderPadding(true);
@@ -47,16 +59,6 @@ public class Evidences {
 		tableheader.setSpacingBefore(4);
 		tableheader.addCell(header);
 		
-		PdfPCell lblSistema = new PdfPCell(new Paragraph("Sistema"));
-		PdfPCell txtSistema = new PdfPCell(new Paragraph("Loja Demo Blaze"));
-		PdfPCell lblVersao = new PdfPCell(new Paragraph("Versao"));
-		PdfPCell txtVersao = new PdfPCell(new Paragraph("Versao"));
-		PdfPCell lblCT = new PdfPCell(new Paragraph());
-		PdfPCell txtCT = new PdfPCell(new Paragraph());
-		PdfPCell lblExecutor = new PdfPCell(new Paragraph("Executor"));
-		PdfPCell txtExecutor = new PdfPCell(new Paragraph(usuarioLogado));
-		PdfPCell lblData = new PdfPCell(new Paragraph());
-		PdfPCell txtData = new PdfPCell(new Paragraph());
 		
 		lblSistema.setBorderColor(BaseColor.BLUE);
 		lblSistema.setHorizontalAlignment(Element.ALIGN_TOP);
