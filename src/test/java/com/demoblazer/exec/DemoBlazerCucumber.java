@@ -6,8 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features/cadastro-blazer.feature" , 
-			tags = "@cadastro", glue = "com.demoblazer.model")
+@CucumberOptions(features = "classpath:features/apagar-compra.feature" , 
+			tags = "@apagar", glue = "com.demoblazer.model")
 public class DemoBlazerCucumber{
 
 }
