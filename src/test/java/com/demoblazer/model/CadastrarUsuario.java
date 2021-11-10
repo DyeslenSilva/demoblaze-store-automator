@@ -66,7 +66,4 @@ public class CadastrarUsuario{
 		submit.click();
 	}
 
-	
-	
-	
 }

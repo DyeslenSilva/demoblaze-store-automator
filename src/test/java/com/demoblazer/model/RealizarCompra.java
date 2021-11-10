@@ -1,41 +1,59 @@
 package com.demoblazer.model;
 
-import demoblazer.pageObject.CompraPageObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import com.demoblazer.driver.DriverDemoBlazer;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class RealizarCompra {
 	
-		private CompraPageObject compraPageObject;
 	
 		@When("escolhe produto que deseja comprar")
 		public void escolhe_produto_que_deseja_comprar() {
-			compraPageObject.escolheProduto();
+			WebElement produto = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			produto.click();
 		}
 		
 		@Then("adiciona o produto no carrinho")
 		public void adiciona_o_produto_no_carrinho() {
-			compraPageObject.addCarrinho();
+			WebElement adicionaProduto = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			adicionaProduto.click();
 		}
 		
 		@Then("vai para a pagina do carrinho de compra")
 		public void vai_para_a_pagina_do_carrinho_de_compra() {
-			compraPageObject.paginaCart();
+			DriverDemoBlazer.getDriver().navigate().to("");
 		}
 		
 		@Then("clica no botao <place order>")
 		public void clica_no_botao_place_order() {
-		   compraPageObject.placeOrder();
+			WebElement botaoPlaceOrder = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			botaoPlaceOrder.click();
 		}
 		
 		@Then("preencho o formulario")
 		public void preencho_o_formulario() {
-			compraPageObject.preencheForm();
+			WebElement txName = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			WebElement txCountry = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			WebElement txCity = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			WebElement txCreditCard = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			WebElement txMonth = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			WebElement txYear = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			
+			txName.sendKeys("");
+			txCountry.sendKeys("");
+			txCity.sendKeys("");
+			txCreditCard.sendKeys("");
+			txMonth.sendKeys("");
+			txYear.sendKeys("");
 		}
 		
 		@Then("envia o formulario")
 		public void envia_o_formulario() {
-			compraPageObject.clickBotaoPurchase();
+			WebElement btPurchase = DriverDemoBlazer.getDriver().findElement(By.xpath(""));
+			btPurchase.click();
 		}
 	
 }
