@@ -20,6 +20,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class Evidences {
 	
 	private static String usuarioLogado = System.getProperty("user.name");
+	private static Font alteraFont = new Font(FontFamily.COURIER,12,Font.BOLD);
 	
 	private	static PdfPCell lblSistema = new PdfPCell(new Paragraph("Sistema"));
 	private	static PdfPCell txtSistema = new PdfPCell(new Paragraph("Loja Demo Blaze"));
@@ -32,6 +33,8 @@ public class Evidences {
 	private	static PdfPCell lblData = new PdfPCell(new Paragraph());
 	private	static PdfPCell txtData = new PdfPCell(new Paragraph());
 	private static	PdfPTable tableheader = new PdfPTable(new float[] { 0.15f, 0.35f,0.13f,0.37f });
+	private static	PdfPCell header = new PdfPCell(new Paragraph("Evidencia de Teste",alteraFont));
+	private static	Document document = new Document(PageSize.A4);
 
 	
 	public static Document geraPDFEvidence(File dir) throws FileNotFoundException, DocumentException {
@@ -44,13 +47,8 @@ public class Evidences {
 	
 	
 	public static void addCabecalhoPDF() throws DocumentException {
-		Document document = new Document(PageSize.A4);
-		
-		Font alteraFont = new Font(FontFamily.COURIER,12,Font.BOLD);
 		alteraFont.setColor(BaseColor.BLUE);
-	
 		
-		PdfPCell header = new PdfPCell(new Paragraph("Evidencia de Teste",alteraFont));
 		header.setUseBorderPadding(true);
 		header.setBorderColor(BaseColor.CYAN);
 		header.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -81,7 +79,6 @@ public class Evidences {
 		txtData.setBorderColor(BaseColor.BLUE);
 		
 		txtCT.setColspan(3);
-	
 		
 		tableheader.addCell(lblSistema);
 		tableheader.addCell(txtSistema);
