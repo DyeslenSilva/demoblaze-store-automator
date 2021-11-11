@@ -3,8 +3,6 @@ package com.demoblazer.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.cucumber.java.BeforeAll;
-
 public class DriverDemoBlazer {
 
 	private static WebDriver driver;

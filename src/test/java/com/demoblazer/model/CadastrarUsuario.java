@@ -1,23 +1,17 @@
 package com.demoblazer.model;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.demoblazer.driver.DriverDemoBlazer;
-import demoblazer.pageObject.IndexObject;
-import demoblazer.pageObject.UsuarioPageObject;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CadastrarUsuario{
 	
-	private IndexObject indexObject;
-	private UsuarioPageObject  usuarioPageObject;
-	
+
 //	public CadastrarUsuario(WebDriver driver) {
 //		usuarioPageObject = new UsuarioPageObject(DriverDemoBlazer.getDriver());
 //		indexObject = new IndexObject(driver);
