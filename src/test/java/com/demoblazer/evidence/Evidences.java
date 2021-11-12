@@ -23,6 +23,11 @@ import com.itextpdf.text.pdf.draw.DottedLineSeparator;
 
 public class Evidences {
 	
+	/***
+	 * Classe responsavel pela geração de evidencias do caso de teste
+	 */
+	
+	
 	private static String usuarioLogado = System.getProperty("user.name");
 	private static Font alteraFont = new Font(FontFamily.COURIER,12,Font.BOLD);
 	private static	Font alteraFontDadosInseridos = new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
@@ -46,7 +51,20 @@ public class Evidences {
 	private static PdfPTable table;
 	private static	PdfPCell cell;
 
-	
+	/***
+	 * 
+	 * @param dir
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws DocumentException
+	 * 
+	 * Metodo responsavel por gerar PDF da evidencia.
+	 * 
+	 * Ele passa o diretorio do arquivo como parametro, retornando o
+	 * documento em PDF, caso contrario, ele
+	 * retonra uma exceção.
+	 * 
+	 */
 	public static Document geraPDFEvidence(File dir) throws FileNotFoundException, DocumentException {
 		Document document = new Document(PageSize.A4);
 		OutputStream outputStream = new FileOutputStream(dir +".pdf");
@@ -55,6 +73,15 @@ public class Evidences {
 		return document;
 	}
 	
+	
+	/***
+	 * 
+	 * @throws DocumentException
+	 * 
+	 * Método responsavel por adicionar o cabeçalho do arquivo 
+	 * contendo todas as informações sobre o teste, sendo ele,
+	 * realizado com sucesso ou não.
+	 */
 	
 	public static void addCabecalhoPDF() throws DocumentException {
 		alteraFont.setColor(BaseColor.BLUE);
@@ -106,6 +133,11 @@ public class Evidences {
 		document.add(tableheader);
 	}
 	
+	/***
+	 * 
+	 * @param driver
+	 * @param doc
+	 */
 	public static void insertSummary(WebDriver driver, Document doc) {
 		alteraFontDadosInseridos.setColor(BaseColor.GREEN);
 		
@@ -121,6 +153,20 @@ public class Evidences {
 		table.addCell(cell);
 		table.setWidthPercentage(50);
 	}
+	
+	/***
+	 * 
+	 * @param doc
+	 * @param requirements
+	 * @param target
+	 * @param nameTest
+	 * @throws DocumentException
+	 * 
+	 * 
+	 * Metodo responsavel por inserir descrição adicional 
+	 * na evidencia de teste.
+	 * 
+	 */
 	
 	public static void insertDescription(Document doc,String requirements,
 								String target,String nameTest) throws DocumentException {		

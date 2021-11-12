@@ -7,8 +7,21 @@ import com.demoblazer.driver.DriverDemoBlazer;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+/***
+ * 
+ * @author dyeslen.duraes
+ *Classe responsavel por realizar testes de
+ *realizar uma compra com sucesso.
+ */
+
 public class RealizarCompra {
 	
+	
+	/***
+	 * Metodo responsavel por escolher 
+	 * um produto para compra
+	 * 
+	 */
 	
 		@When("escolhe produto que deseja comprar")
 		public void escolhe_produto_que_deseja_comprar() {
@@ -16,6 +29,10 @@ public class RealizarCompra {
 					.findElement(By.xpath("//a[@href='prod.html?idp_=1']"));
 			produto.click();
 		}
+	
+		/***
+		 * 
+		 */
 		
 		@Then("adiciona o produto no carrinho")
 		public void adiciona_o_produto_no_carrinho() {

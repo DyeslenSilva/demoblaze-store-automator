@@ -9,6 +9,13 @@ import com.demoblazer.driver.DriverDemoBlazer;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.When;
 
+/***
+ * 
+ * @author dyeslen.duraes
+ *	Classe responsavel pelo cadastro 
+ *de usuario no sistema.
+ */
+
 public class CadastrarUsuario{
 	
 
@@ -17,7 +24,12 @@ public class CadastrarUsuario{
 //		indexObject = new IndexObject(driver);
 //		System.out.println("construtor");
 //	}
+
 	
+	/***
+	 * Metodo responsavel por chamar o
+	 * driver e inicializa-lo
+	 */
 	
 	@Before
 	public void before() {
@@ -29,10 +41,21 @@ public class CadastrarUsuario{
 	
 	}
 	
+	/***
+	 * Metodo responsavel por acessar a pagina inicial
+	 * do sistema.
+	 */
+	
 	@When("acesso a <homepage>")
 	public void acesso_a_homepage() {
 		DriverDemoBlazer.getDriver().navigate().to("https://demoblaze.com/");
 	}
+	
+	/***
+	 * Metodo responsavel por clicar no
+	 * metodo <sign up> para realizar o cadastro
+	 * do usuario.
+	 */
 	
 	@SuppressWarnings("deprecation")
 	@When("clico no botao <sign up>")
@@ -45,6 +68,11 @@ public class CadastrarUsuario{
 		signup.click();
 	}
 	
+	/***
+	 * Metodo responsavel por preencher o formulario
+	 * de cadastro com os campos <username> e <senha>.
+	 */
+	
 	@When("preencho <username> e <senha>")
 	public void preencho_username_e_senha() {
 		WebElement username = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='sign-username']"));
@@ -53,6 +81,10 @@ public class CadastrarUsuario{
 		username.sendKeys("dyeslen");
 		password.sendKeys("dyeslen");
 	}
+	
+	/***
+	 * Metodo responsavel por clicar no botao <submit>
+	 */
 	
 	@When("clico no botao <submit>")
 	public void clico_no_botao_submit() {
