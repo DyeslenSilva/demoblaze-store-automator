@@ -27,6 +27,9 @@ public class Evidences {
 	private static Font alteraFont = new Font(FontFamily.COURIER,12,Font.BOLD);
 	private static	Font alteraFontDadosInseridos = new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
 
+	private static Font changeFontlbl = new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
+	private static	Font changeFonttxt = new Font(Font.FontFamily.TIMES_ROMAN,10);
+	
 	private	static PdfPCell lblSistema = new PdfPCell(new Paragraph("Sistema"));
 	private	static PdfPCell txtSistema = new PdfPCell(new Paragraph("Loja Demo Blaze"));
 	private	static PdfPCell lblVersao = new PdfPCell(new Paragraph("Versao"));
@@ -123,8 +126,7 @@ public class Evidences {
 	public static void insertDescription(Document doc,String requirements,
 								String target,String nameTest) throws DocumentException {
 		
-		Font changeFontlbl = new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
-		Font changeFonttxt = new Font(Font.FontFamily.TIMES_ROMAN,10);
+		
 		
 		Paragraph lblFieldRequirements = new Paragraph("Requirements: ",changeFontlbl);
 		Paragraph txtFieldRequirements = new Paragraph(requirements, changeFonttxt);
