@@ -18,13 +18,6 @@ import io.cucumber.java.en.When;
 
 public class CadastrarUsuario{
 	
-
-//	public CadastrarUsuario(WebDriver driver) {
-//		usuarioPageObject = new UsuarioPageObject(DriverDemoBlazer.getDriver());
-//		indexObject = new IndexObject(driver);
-//		System.out.println("construtor");
-//	}
-
 	
 	/***
 	 * Metodo responsavel por chamar o
@@ -73,10 +66,14 @@ public class CadastrarUsuario{
 	 * de cadastro com os campos <username> e <senha>.
 	 */
 	
+	@SuppressWarnings("deprecation")
 	@When("preencho <username> e <senha>")
 	public void preencho_username_e_senha() {
-		WebElement username = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='sign-username']"));
-		WebElement password = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='sign-password']"));
+		WebElement username = (WebElement) (new WebDriverWait(DriverDemoBlazer.getDriver(), 30)
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='sign-username"))));
+				
+		WebElement password =(WebElement)(new WebDriverWait(DriverDemoBlazer.getDriver(), 30)
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='sign-password']"))));
 		
 		username.sendKeys("dyeslen");
 		password.sendKeys("dyeslen");
@@ -86,9 +83,12 @@ public class CadastrarUsuario{
 	 * Metodo responsavel por clicar no botao <submit>
 	 */
 	
+	@SuppressWarnings("deprecation")
 	@When("clico no botao <submit>")
 	public void clico_no_botao_submit() {
-		WebElement submit = DriverDemoBlazer.getDriver().findElement(By.xpath("//button[@onclick=\"send()\"]"));
+		WebElement submit = (WebElement)(new WebDriverWait(DriverDemoBlazer.getDriver(), 30)
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick=\\\"send()\\\"]"))));
+				
 		submit.click();
 	}
 

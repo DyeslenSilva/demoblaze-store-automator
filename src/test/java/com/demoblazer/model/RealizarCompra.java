@@ -2,6 +2,8 @@ package com.demoblazer.model;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.demoblazer.driver.DriverDemoBlazer;
 import io.cucumber.java.en.Then;
@@ -23,10 +25,15 @@ public class RealizarCompra {
 	 * 
 	 */
 	
+		@SuppressWarnings("deprecation")
 		@When("escolhe produto que deseja comprar")
 		public void escolhe_produto_que_deseja_comprar() {
-			WebElement produto = DriverDemoBlazer.getDriver()
-					.findElement(By.xpath("//a[@href='prod.html?idp_=1']"));
+			WebElement produto = (WebElement) (new WebDriverWait(
+					DriverDemoBlazer.getDriver(), 30)
+					.until(ExpectedConditions.presenceOfElementLocated(
+							By.xpath("//a[@href='prod.html?idp_=1']"))));
+					
+
 			produto.click();
 		}
 	
