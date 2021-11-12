@@ -26,7 +26,6 @@ public class Evidences {
 	private static String usuarioLogado = System.getProperty("user.name");
 	private static Font alteraFont = new Font(FontFamily.COURIER,12,Font.BOLD);
 	private static	Font alteraFontDadosInseridos = new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
-
 	private static Font changeFontlbl = new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
 	private static	Font changeFonttxt = new Font(Font.FontFamily.TIMES_ROMAN,10);
 	
@@ -124,9 +123,7 @@ public class Evidences {
 	}
 	
 	public static void insertDescription(Document doc,String requirements,
-								String target,String nameTest) throws DocumentException {
-		
-		
+								String target,String nameTest) throws DocumentException {		
 		
 		Paragraph lblFieldRequirements = new Paragraph("Requirements: ",changeFontlbl);
 		Paragraph txtFieldRequirements = new Paragraph(requirements, changeFonttxt);
