@@ -31,7 +31,8 @@ public class RealizarCompra {
 		}
 	
 		/***
-		 * 
+		 * Metodo responsavel por adicionar
+		 * um produto no carrinho.
 		 */
 		
 		@Then("adiciona o produto no carrinho")
@@ -41,16 +42,32 @@ public class RealizarCompra {
 			adicionaProduto.click();
 		}
 		
+		/***
+		 * Metodo responsavel por redirecionar para
+		 * a pagina de carrinho da compra
+		 */
+		
 		@Then("vai para a pagina do carrinho de compra")
 		public void vai_para_a_pagina_do_carrinho_de_compra() {
 			DriverDemoBlazer.getDriver().navigate().to("https://demoblaze.com/cart.html");
 		}
+		
+		/***
+		 * Metodo responsavel por clicar no botao
+		 * <place order> para preencher o formulario
+		 * da compra
+		 */
 		
 		@Then("clica no botao <place order>")
 		public void clica_no_botao_place_order() {
 			WebElement botaoPlaceOrder = DriverDemoBlazer.getDriver().findElement(By.xpath("//button[@class='btn btn-success']"));
 			botaoPlaceOrder.click();
 		}
+		
+		/***
+		 * Metodo responsavel por preencher o formulario
+		 * de compra.
+		 */
 		
 		@Then("preencho o formulario")
 		public void preencho_o_formulario() {
@@ -68,6 +85,11 @@ public class RealizarCompra {
 			txMonth.sendKeys("12");
 			txYear.sendKeys("24");
 		}
+		
+		/***
+		 * Metodo responsavel por enviar o formulario 
+		 * da compra.
+		 */
 		
 		@Then("envia o formulario")
 		public void envia_o_formulario() {
