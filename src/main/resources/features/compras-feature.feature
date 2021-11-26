@@ -2,6 +2,7 @@
 Feature: compras
 
 	Scenario: realizar compra
+		When acessa a pagina
 		When escolhe produto que deseja comprar
 		Then  adiciona o produto no carrinho
 		And vai para a pagina do carrinho de compra

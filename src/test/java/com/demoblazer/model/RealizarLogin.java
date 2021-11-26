@@ -1,7 +1,13 @@
 package com.demoblazer.model;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.demoblazer.driver.DriverDemoBlazer;
 
 import io.cucumber.java.Before;
@@ -24,12 +30,12 @@ public class RealizarLogin{
 	 * 
 	 */
 	
-	@Before
-	public void before() {
-		System.out.println("before");
-		DriverDemoBlazer.setDriver();
-	}
-	
+//	@Before
+//	public void before() {
+//		System.out.println("before");
+//		DriverDemoBlazer.setDriver();
+//	}
+//	
 	/***
 	 * Metodo responsavel por acesso 
 	 * a pagina inicial do sistema
@@ -55,13 +61,17 @@ public class RealizarLogin{
 	 * Metodo responsavel por preencher
 	 * formulario de login com <login> e
 	 * <senha>. 
+	 * @throws InterruptedException 
 	 */
 	
 	@When("preencho com <login> e <senha>")
-	public void preencho_com_login_e_senha() {
+	public void preencho_com_login_e_senha() throws InterruptedException {
+		//Thread.sleep(3000);
+		WebDriverWait driverWait = new WebDriverWait(DriverDemoBlazer.getDriver(), Duration.ofSeconds(10));
+		driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='loginusername']")));
 		WebElement login = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='loginusername']"));
+		driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='loginpassword']")));
 		WebElement senha = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='loginpassword']"));
-	
 		
 		
 		login.sendKeys("dyeslen");
@@ -71,11 +81,17 @@ public class RealizarLogin{
 	/***
 	 * Metodo responsavel por clicar 
 	 * no botao <log in>
+	 * @throws InterruptedException 
 	 */
 	
 	@When("clico no botao <log in>")
-	public void clico_no_botao_log_in() {
+	public void clico_no_botao_log_in() throws InterruptedException {
+		Thread.sleep(2000);
 		WebElement botaoLogin = DriverDemoBlazer.getDriver().findElement(By.xpath("//button[@onclick='logIn()']"));
+		
+//		WebDriverWait driverWait = new WebDriverWait(DriverDemoBlazer.getDriver(),Duration.ofSeconds(4));
+//		driverWait.until(ExpectedConditions.elementToBeClickable(botaoLogin));
+		
 		botaoLogin.click();
 	}
 	

@@ -48,46 +48,45 @@ public class CadastrarUsuario{
 	 * Metodo responsavel por clicar no
 	 * metodo <sign up> para realizar o cadastro
 	 * do usuario.
+	 * @throws InterruptedException 
 	 */
 	
-	@SuppressWarnings("deprecation")
+	//@SuppressWarnings("deprecation")
 	@When("clico no botao <sign up>")
-	public void clico_no_botao_sign_up() {
-		WebElement signup = (WebElement) (new WebDriverWait(DriverDemoBlazer.getDriver(), 30)
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@id='signin2']"))));
-				
-				//DriverDemoBlazer.getDriver().findElement(By.xpath("//a[@id='signin2']"));
-		
+	public void clico_no_botao_sign_up() throws InterruptedException {
+		Thread.sleep(3000);
+		WebElement signup = DriverDemoBlazer.getDriver().findElement(By.xpath("//a[@id='signin2']"));
 		signup.click();
 	}
 	
 	/***
 	 * Metodo responsavel por preencher o formulario
 	 * de cadastro com os campos <username> e <senha>.
+	 * @throws InterruptedException 
 	 */
 	
-	@SuppressWarnings("deprecation")
+	//@SuppressWarnings("deprecation")
 	@When("preencho <username> e <senha>")
-	public void preencho_username_e_senha() {
-		WebElement username = (WebElement) (new WebDriverWait(DriverDemoBlazer.getDriver(), 30)
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='sign-username"))));
-				
-		WebElement password =(WebElement)(new WebDriverWait(DriverDemoBlazer.getDriver(), 30)
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='sign-password']"))));
+	public void preencho_username_e_senha() throws InterruptedException {
+		Thread.sleep(3000);
 		
-		username.sendKeys("dyeslen");
-		password.sendKeys("dyeslen");
+		WebElement username =DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='sign-username']"));
+		WebElement password = DriverDemoBlazer.getDriver().findElement(By.xpath("//input[@id='sign-password']"));
+		
+		username.sendKeys("asdew");
+		password.sendKeys("3232");
 	}
 	
 	/***
 	 * Metodo responsavel por clicar no botao <submit>
+	 * @throws InterruptedException 
 	 */
 	
-	@SuppressWarnings("deprecation")
+	//@SuppressWarnings("deprecation")
 	@When("clico no botao <submit>")
-	public void clico_no_botao_submit() {
-		WebElement submit = (WebElement)(new WebDriverWait(DriverDemoBlazer.getDriver(), 30)
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick=\\\"send()\\\"]"))));
+	public void clico_no_botao_submit() throws InterruptedException {
+		Thread.sleep(2000);
+		WebElement submit =DriverDemoBlazer.getDriver().findElement(By.xpath("//button[@onclick=\"register()\"]"));
 				
 		submit.click();
 	}
